@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/Bookmark Logo.png" type="image/x-icon">
+    <title>Book Mark</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="BookMark pb-2">
+        <div class="container text-center">
+            <h1 class="fw-medium mb-5 pt-4 ">Bookmarker</h1>
+
+            <div class="actionn rounded-4 py-5 position-relative h-auto">
+                <div class="title rounded-3">
+                    <h3 class="mb-0 py-3 w-100 fw-medium">
+                        <i class="fa-solid fa-bookmark"></i>
+                        Bookmark your favorite sites
+                        <i class="fa-solid fa-bookmark"></i>
+                    </h3>
+                </div>
+
+                <div class="site-form text-start d-flex flex-column pb-4 px-5">
+                    <label for="siteName" class="fw-bold ps-2 pb-2">
+                        <i class="fa-solid fa-book-bookmark pe-2"></i>
+                        Site Name
+                    </label>
+                    <input type="text" id="siteName" oninput="validationSite(this)" class="form-control border-0" placeholder="Bookmark Name">
+                </div>
+
+                <div class="site-form text-start d-flex flex-column pb-5 px-5">
+                    <label for="siteUrl" class="fw-bold ps-2 pb-2">
+                        <i class="fa-solid fa-link pe-2"></i>
+                        Site URL
+                    </label>
+                    <input type="url" id="siteUrl" oninput="validationSite(this)" class="form-control border-0" placeholder="Website URL">
+                </div>
+
+                <div class="click position-relative mx-auto mb-2">
+                    <a href="#">
+                        <button onclick="addSite()" class="btn btn-darck-blue rounded-0 position-relative fw-semibold">
+                            <p class="position-relative z-3 p-0 m-0">Submit</p>
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="data rounded-4 p-5 my-5 h-auto">
+                <table class="table mb-0 main-font">
+                    <thead>    
+                        <tr>
+                            <th>Index</th>
+                            <th>Website Name</th>
+                            <th>Visit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableData"></tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div id="siteRuls" class="message h-100 w-100 d-flex justify-content-center align-items-center d-none">
+            <div class="container d-flex justify-content-center align-items-center">
+                <div class="alert-message rounded-4 px-4 py-4 ">
+                    <div class="message-header d-flex justify-content-between">
+                        <div class="circles d-flex justify-content-center align-items-center">
+                            <span class="bg-danger rounded-circle me-2"></span>
+                            <span class="bg-warning rounded-circle me-2"></span>
+                            <span class="bg-success rounded-circle me-2"></span>
+                        </div>
+                        <div class="close">
+                            <button onclick="closeAlert()" class="border-0 bg-inherit">
+                                <i class="fa-solid fa-xmark fs-3"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="message-body py-4">
+                        <h5>Site Name or Url is not valid, Please follow the rules below :</h5>
+
+                        <div class="ruls main-font pt-3">
+                            <p class="mb-2">
+                                <i class="fa-regular fa-circle-right p-2"></i>
+                                Site name must contain at least 3 characters .
+                            </p>
+                            <p class="mb-0">
+                                <i class="fa-regular fa-circle-right p-2"></i>
+                                Site URL must be a valid one .
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
